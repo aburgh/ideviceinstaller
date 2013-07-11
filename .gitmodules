@@ -1,0 +1,6 @@
+[submodule "libimobiledevice"]
+	path = deps/libimobiledevice
+	url = https://github.com/aburgh/libimobiledevice.git
+[submodule "libzip"]
+	path = deps/libzip
+	url = https://github.com/aburgh/libzip
