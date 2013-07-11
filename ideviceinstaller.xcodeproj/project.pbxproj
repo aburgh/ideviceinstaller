@@ -7,15 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		961FA02E178E38B300B6748E /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 961FA026178E38B300B6748E /* ioapi.c */; };
-		961FA02F178E38B300B6748E /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 961FA028178E38B300B6748E /* mztools.c */; };
-		961FA030178E38B300B6748E /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 961FA02A178E38B300B6748E /* unzip.c */; };
-		961FA031178E38B300B6748E /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 961FA02C178E38B300B6748E /* zip.c */; };
 		969EAA761785DC6F00C79F10 /* plist.c in Sources */ = {isa = PBXBuildFile; fileRef = 969EAA621785DB9200C79F10 /* plist.c */; };
 		969EAA771785DC7B00C79F10 /* ideviceinstaller.c in Sources */ = {isa = PBXBuildFile; fileRef = 969EAA671785DB9200C79F10 /* ideviceinstaller.c */; };
-		969EAA791785DC9200C79F10 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 969EAA781785DC9200C79F10 /* libz.dylib */; };
 		969EAADA1785DE4500C79F10 /* libimobiledevice.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 969EAA981785DDD600C79F10 /* libimobiledevice.dylib */; };
 		969EAADC1785DE8000C79F10 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969EAADB1785DE8000C79F10 /* CoreFoundation.framework */; };
+		96ADA0FA178F0D5200175AAD /* libzip Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96ADA0A5178EF44800175AAD /* libzip Mac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -299,6 +295,13 @@
 			remoteGlobalIDString = 4BACD65015BC301300920691;
 			remoteInfo = tryopen;
 		};
+		96ADA0F8178F0D4200175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B01D68A15B2F3F1002D5007;
+			remoteInfo = "libzip Mac";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -314,15 +317,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		961FA025178E38B300B6748E /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
-		961FA026178E38B300B6748E /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
-		961FA027178E38B300B6748E /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
-		961FA028178E38B300B6748E /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
-		961FA029178E38B300B6748E /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
-		961FA02A178E38B300B6748E /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
-		961FA02B178E38B300B6748E /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
-		961FA02C178E38B300B6748E /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
-		961FA02D178E38B300B6748E /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		969EAA551785DB9200C79F10 /* AUTHORS */ = {isa = PBXFileReference; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
 		969EAA561785DB9200C79F10 /* autogen.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = autogen.sh; sourceTree = "<group>"; };
 		969EAA571785DB9200C79F10 /* configure.ac */ = {isa = PBXFileReference; lastKnownFileType = text; path = configure.ac; sourceTree = "<group>"; };
@@ -349,31 +343,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96ADA0FA178F0D5200175AAD /* libzip Mac.framework in Frameworks */,
 				969EAADC1785DE8000C79F10 /* CoreFoundation.framework in Frameworks */,
 				969EAADA1785DE4500C79F10 /* libimobiledevice.dylib in Frameworks */,
-				969EAA791785DC9200C79F10 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		961FA024178E38B300B6748E /* minizip */ = {
-			isa = PBXGroup;
-			children = (
-				961FA025178E38B300B6748E /* crypt.h */,
-				961FA026178E38B300B6748E /* ioapi.c */,
-				961FA027178E38B300B6748E /* ioapi.h */,
-				961FA028178E38B300B6748E /* mztools.c */,
-				961FA029178E38B300B6748E /* mztools.h */,
-				961FA02A178E38B300B6748E /* unzip.c */,
-				961FA02B178E38B300B6748E /* unzip.h */,
-				961FA02C178E38B300B6748E /* zip.c */,
-				961FA02D178E38B300B6748E /* zip.h */,
-			);
-			path = minizip;
-			sourceTree = "<group>";
-		};
 		969EAA401785DA5000C79F10 = {
 			isa = PBXGroup;
 			children = (
@@ -422,7 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				969EAA611785DB9200C79F10 /* plist */,
-				961FA024178E38B300B6748E /* minizip */,
 			);
 			path = osx;
 			sourceTree = "<group>";
@@ -531,6 +508,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				96ADA0F9178F0D4200175AAD /* PBXTargetDependency */,
 				969EAAD91785DE3900C79F10 /* PBXTargetDependency */,
 			);
 			name = ideviceinstaller;
@@ -854,11 +832,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				961FA02E178E38B300B6748E /* ioapi.c in Sources */,
-				961FA030178E38B300B6748E /* unzip.c in Sources */,
 				969EAA771785DC7B00C79F10 /* ideviceinstaller.c in Sources */,
-				961FA031178E38B300B6748E /* zip.c in Sources */,
-				961FA02F178E38B300B6748E /* mztools.c in Sources */,
 				969EAA761785DC6F00C79F10 /* plist.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -870,6 +844,11 @@
 			isa = PBXTargetDependency;
 			name = imobiledevice.dylib;
 			targetProxy = 969EAAD81785DE3900C79F10 /* PBXContainerItemProxy */;
+		};
+		96ADA0F9178F0D4200175AAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libzip Mac";
+			targetProxy = 96ADA0F8178F0D4200175AAD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -906,7 +885,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/usr/local/include";
+				HEADER_SEARCH_PATHS = (
+					"$(CONFIGURATION_BUILD_DIR)/usr/local/include",
+					"$(SRCROOT)/deps/libzip/lib",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -940,7 +922,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(DSTROOT)/usr/local/include";
+				HEADER_SEARCH_PATHS = (
+					"$(DSTROOT)/usr/local/include",
+					"$(SRCROOT)/deps/libzip/lib",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 			};
@@ -951,6 +936,7 @@
 			buildSettings = {
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					HAVE_LIBIMOBILEDEVICE_1_1,
+					HAVE_LIBIMOBILEDEVICE_1_1_5,
 					"$(inherited)",
 				);
 				OTHER_CFLAGS = "";
@@ -961,7 +947,10 @@
 		969EAA741785DBA900C79F10 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = HAVE_LIBIMOBILEDEVICE_1_1;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_LIBIMOBILEDEVICE_1_1,
+					HAVE_LIBIMOBILEDEVICE_1_1_5,
+				);
 				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
