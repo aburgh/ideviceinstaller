@@ -31,3 +31,6 @@ libtool
 stamp-h1
 src/.libs
 src/ideviceinstaller
+.DS_Store
+xcuserdata
+*.xccheckout

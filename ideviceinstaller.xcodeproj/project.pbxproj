@@ -1,0 +1,994 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		961FA02E178E38B300B6748E /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 961FA026178E38B300B6748E /* ioapi.c */; };
+		961FA02F178E38B300B6748E /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 961FA028178E38B300B6748E /* mztools.c */; };
+		961FA030178E38B300B6748E /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 961FA02A178E38B300B6748E /* unzip.c */; };
+		961FA031178E38B300B6748E /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 961FA02C178E38B300B6748E /* zip.c */; };
+		969EAA761785DC6F00C79F10 /* plist.c in Sources */ = {isa = PBXBuildFile; fileRef = 969EAA621785DB9200C79F10 /* plist.c */; };
+		969EAA771785DC7B00C79F10 /* ideviceinstaller.c in Sources */ = {isa = PBXBuildFile; fileRef = 969EAA671785DB9200C79F10 /* ideviceinstaller.c */; };
+		969EAA791785DC9200C79F10 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 969EAA781785DC9200C79F10 /* libz.dylib */; };
+		969EAADA1785DE4500C79F10 /* libimobiledevice.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 969EAA981785DDD600C79F10 /* libimobiledevice.dylib */; };
+		969EAADC1785DE8000C79F10 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969EAADB1785DE8000C79F10 /* CoreFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		969EAA951785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B88B30174E0B9900B868D9;
+			remoteInfo = imobiledevice.a;
+		};
+		969EAA971785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC5FE174E493200AF832F;
+			remoteInfo = imobiledevice.dylib;
+		};
+		969EAA991785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC65F174E7D6800AF832F;
+			remoteInfo = ideviceclient;
+		};
+		969EAA9B1785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC67E174EA13500AF832F;
+			remoteInfo = afccheck;
+		};
+		969EAA9D1785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC68B174EAA9C00AF832F;
+			remoteInfo = "lckd-client";
+		};
+		969EAA9F1785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC69B174EABFB00AF832F;
+			remoteInfo = filerelaytest;
+		};
+		969EAAA11785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC6A8174EAD4800AF832F;
+			remoteInfo = housearresttest;
+		};
+		969EAAA31785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC6B5174EAF2900AF832F;
+			remoteInfo = ideviceheartbeat;
+		};
+		969EAAA51785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC6D2174EB17D00AF832F;
+			remoteInfo = idevice_id;
+		};
+		969EAAA71785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC6EB174EB24E00AF832F;
+			remoteInfo = ideviceinfo;
+		};
+		969EAAA91785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC6FB174EBC5B00AF832F;
+			remoteInfo = ideviceenterrecovery;
+		};
+		969EAAAB1785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC70A174EBDCC00AF832F;
+			remoteInfo = idevicesyslog;
+		};
+		969EAAAD1785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96CCC719174EC00100AF832F;
+			remoteInfo = idevicediagnostics;
+		};
+		969EAAAF1785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9609CAF2174EF50100E744BE;
+			remoteInfo = idevicepair;
+		};
+		969EAAB11785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96F0F5FA174EFFAC0014879C;
+			remoteInfo = idevicebackup;
+		};
+		969EAAB31785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96F0F60E174F01420014879C;
+			remoteInfo = idevicebackup2;
+		};
+		969EAAB51785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96F0F637175223B70014879C;
+			remoteInfo = idevicedate;
+		};
+		969EAAB71785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96F0F655175224C20014879C;
+			remoteInfo = idevicedebugserverproxy;
+		};
+		969EAAB91785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96F0F66717522D320014879C;
+			remoteInfo = ideviceimagemounter;
+		};
+		969EAABB1785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96F0F67C175231690014879C;
+			remoteInfo = ideviceprovision;
+		};
+		969EAABD1785DDD600C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96F0F68E1752322C0014879C;
+			remoteInfo = idevicescreenshot;
+		};
+		969EAAD81785DE3900C79F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 96CCC5FD174E493200AF832F;
+			remoteInfo = imobiledevice.dylib;
+		};
+		96ADA0A2178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BDC71E015B182B200236D3C;
+			remoteInfo = libzip;
+		};
+		96ADA0A4178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4B01D68B15B2F3F1002D5007;
+			remoteInfo = "libzip Mac";
+		};
+		96ADA0A6178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4B01D6FD15B2F4B1002D5007;
+			remoteInfo = zipmerge;
+		};
+		96ADA0A8178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4B01D71315B2F4EB002D5007;
+			remoteInfo = zipcmp;
+		};
+		96ADA0AA178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4B01D71E15B2F4F7002D5007;
+			remoteInfo = ziptorrent;
+		};
+		96ADA0AC178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD5A415BC2D4C00920691;
+			remoteInfo = add_from_buffer;
+		};
+		96ADA0AE178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD5C115BC2DC900920691;
+			remoteInfo = add_from_filep;
+		};
+		96ADA0B0178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD5D015BC2DF200920691;
+			remoteInfo = fopen_unchanged;
+		};
+		96ADA0B2178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD5DF15BC2F3700920691;
+			remoteInfo = fread;
+		};
+		96ADA0B4178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD58915BC2CEA00920691;
+			remoteInfo = modify;
+		};
+		96ADA0B6178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD5EE15BC2F6600920691;
+			remoteInfo = name_locate;
+		};
+		96ADA0B8178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD5FD15BC2F9500920691;
+			remoteInfo = set_comment_all;
+		};
+		96ADA0BA178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD60A15BC2FA300920691;
+			remoteInfo = set_comment_localonly;
+		};
+		96ADA0BC178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD61715BC2FA900920691;
+			remoteInfo = set_comment_removeglobal;
+		};
+		96ADA0BE178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD62415BC2FAC00920691;
+			remoteInfo = set_comment_revert;
+		};
+		96ADA0C0178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD63115BC2FAE00920691;
+			remoteInfo = set_compression;
+		};
+		96ADA0C2178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD64215BC2FEF00920691;
+			remoteInfo = stat_index;
+		};
+		96ADA0C4178EF44800175AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4BACD65015BC301300920691;
+			remoteInfo = tryopen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		969EAA6A1785DBA900C79F10 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		961FA025178E38B300B6748E /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		961FA026178E38B300B6748E /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		961FA027178E38B300B6748E /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		961FA028178E38B300B6748E /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		961FA029178E38B300B6748E /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		961FA02A178E38B300B6748E /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		961FA02B178E38B300B6748E /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		961FA02C178E38B300B6748E /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		961FA02D178E38B300B6748E /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		969EAA551785DB9200C79F10 /* AUTHORS */ = {isa = PBXFileReference; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
+		969EAA561785DB9200C79F10 /* autogen.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = autogen.sh; sourceTree = "<group>"; };
+		969EAA571785DB9200C79F10 /* configure.ac */ = {isa = PBXFileReference; lastKnownFileType = text; path = configure.ac; sourceTree = "<group>"; };
+		969EAA581785DB9200C79F10 /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		969EAA5A1785DB9200C79F10 /* as-compiler-flag.m4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "as-compiler-flag.m4"; sourceTree = "<group>"; };
+		969EAA5B1785DB9200C79F10 /* Makefile.am */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		969EAA5D1785DB9200C79F10 /* Makefile.am */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		969EAA5E1785DB9200C79F10 /* ideviceinstaller.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ideviceinstaller.1; sourceTree = "<group>"; };
+		969EAA5F1785DB9200C79F10 /* NEWS */ = {isa = PBXFileReference; lastKnownFileType = text; path = NEWS; sourceTree = "<group>"; };
+		969EAA621785DB9200C79F10 /* plist.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = plist.c; sourceTree = "<group>"; };
+		969EAA631785DB9200C79F10 /* plist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plist.h; sourceTree = "<group>"; };
+		969EAA641785DB9200C79F10 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		969EAA661785DB9200C79F10 /* Makefile.am */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		969EAA671785DB9200C79F10 /* ideviceinstaller.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ideviceinstaller.c; sourceTree = "<group>"; };
+		969EAA6C1785DBA900C79F10 /* ideviceinstaller */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ideviceinstaller; sourceTree = BUILT_PRODUCTS_DIR; };
+		969EAA781785DC9200C79F10 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libimobiledevice.xcodeproj; path = ../libimobiledevice/libimobiledevice.xcodeproj; sourceTree = "<group>"; };
+		969EAADB1785DE8000C79F10 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		96ADA073178EF44700175AAD /* libzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libzip.xcodeproj; path = deps/libzip/xcode/libzip.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		969EAA691785DBA900C79F10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969EAADC1785DE8000C79F10 /* CoreFoundation.framework in Frameworks */,
+				969EAADA1785DE4500C79F10 /* libimobiledevice.dylib in Frameworks */,
+				969EAA791785DC9200C79F10 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		961FA024178E38B300B6748E /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				961FA025178E38B300B6748E /* crypt.h */,
+				961FA026178E38B300B6748E /* ioapi.c */,
+				961FA027178E38B300B6748E /* ioapi.h */,
+				961FA028178E38B300B6748E /* mztools.c */,
+				961FA029178E38B300B6748E /* mztools.h */,
+				961FA02A178E38B300B6748E /* unzip.c */,
+				961FA02B178E38B300B6748E /* unzip.h */,
+				961FA02C178E38B300B6748E /* zip.c */,
+				961FA02D178E38B300B6748E /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+		969EAA401785DA5000C79F10 = {
+			isa = PBXGroup;
+			children = (
+				969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */,
+				96ADA073178EF44700175AAD /* libzip.xcodeproj */,
+				969EAA641785DB9200C79F10 /* README */,
+				969EAA551785DB9200C79F10 /* AUTHORS */,
+				969EAA581785DB9200C79F10 /* COPYING */,
+				969EAA5B1785DB9200C79F10 /* Makefile.am */,
+				969EAA5F1785DB9200C79F10 /* NEWS */,
+				969EAA751785DBE400C79F10 /* autoconf */,
+				969EAA5C1785DB9200C79F10 /* man */,
+				969EAA601785DB9200C79F10 /* osx */,
+				969EAA651785DB9200C79F10 /* src */,
+				969EAA7A1785DCB600C79F10 /* Libraries and Frameworks */,
+				969EAA4A1785DA5000C79F10 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		969EAA4A1785DA5000C79F10 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				969EAA6C1785DBA900C79F10 /* ideviceinstaller */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		969EAA591785DB9200C79F10 /* m4 */ = {
+			isa = PBXGroup;
+			children = (
+				969EAA5A1785DB9200C79F10 /* as-compiler-flag.m4 */,
+			);
+			path = m4;
+			sourceTree = "<group>";
+		};
+		969EAA5C1785DB9200C79F10 /* man */ = {
+			isa = PBXGroup;
+			children = (
+				969EAA5D1785DB9200C79F10 /* Makefile.am */,
+				969EAA5E1785DB9200C79F10 /* ideviceinstaller.1 */,
+			);
+			path = man;
+			sourceTree = "<group>";
+		};
+		969EAA601785DB9200C79F10 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				969EAA611785DB9200C79F10 /* plist */,
+				961FA024178E38B300B6748E /* minizip */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		969EAA611785DB9200C79F10 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				969EAA621785DB9200C79F10 /* plist.c */,
+				969EAA631785DB9200C79F10 /* plist.h */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
+		969EAA651785DB9200C79F10 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				969EAA661785DB9200C79F10 /* Makefile.am */,
+				969EAA671785DB9200C79F10 /* ideviceinstaller.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		969EAA751785DBE400C79F10 /* autoconf */ = {
+			isa = PBXGroup;
+			children = (
+				969EAA561785DB9200C79F10 /* autogen.sh */,
+				969EAA571785DB9200C79F10 /* configure.ac */,
+				969EAA591785DB9200C79F10 /* m4 */,
+			);
+			name = autoconf;
+			sourceTree = "<group>";
+		};
+		969EAA7A1785DCB600C79F10 /* Libraries and Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				969EAADB1785DE8000C79F10 /* CoreFoundation.framework */,
+				969EAA781785DC9200C79F10 /* libz.dylib */,
+			);
+			name = "Libraries and Frameworks";
+			sourceTree = "<group>";
+		};
+		969EAA7C1785DDD600C79F10 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				969EAA961785DDD600C79F10 /* libimobiledevice.a */,
+				969EAA981785DDD600C79F10 /* libimobiledevice.dylib */,
+				969EAA9A1785DDD600C79F10 /* ideviceclient */,
+				969EAA9C1785DDD600C79F10 /* afccheck */,
+				969EAA9E1785DDD600C79F10 /* lckd-client */,
+				969EAAA01785DDD600C79F10 /* filerelaytest */,
+				969EAAA21785DDD600C79F10 /* housearresttest */,
+				969EAAA41785DDD600C79F10 /* ideviceheartbeat */,
+				969EAAA61785DDD600C79F10 /* idevice_id */,
+				969EAAA81785DDD600C79F10 /* ideviceinfo */,
+				969EAAAA1785DDD600C79F10 /* ideviceenterrecovery */,
+				969EAAAC1785DDD600C79F10 /* idevicesyslog */,
+				969EAAAE1785DDD600C79F10 /* idevicediagnostics */,
+				969EAAB01785DDD600C79F10 /* idevicepair */,
+				969EAAB21785DDD600C79F10 /* idevicebackup */,
+				969EAAB41785DDD600C79F10 /* idevicebackup2 */,
+				969EAAB61785DDD600C79F10 /* idevicedate */,
+				969EAAB81785DDD600C79F10 /* idevicedebugserverproxy */,
+				969EAABA1785DDD600C79F10 /* ideviceimagemounter */,
+				969EAABC1785DDD600C79F10 /* ideviceprovision */,
+				969EAABE1785DDD600C79F10 /* idevicescreenshot */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96ADA074178EF44700175AAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96ADA0A3178EF44800175AAD /* libzip.framework */,
+				96ADA0A5178EF44800175AAD /* libzip Mac.framework */,
+				96ADA0A7178EF44800175AAD /* zipmerge */,
+				96ADA0A9178EF44800175AAD /* zipcmp */,
+				96ADA0AB178EF44800175AAD /* ziptorrent */,
+				96ADA0AD178EF44800175AAD /* add_from_buffer */,
+				96ADA0AF178EF44800175AAD /* add_from_filep */,
+				96ADA0B1178EF44800175AAD /* fopen_unchanged */,
+				96ADA0B3178EF44800175AAD /* fread */,
+				96ADA0B5178EF44800175AAD /* modify */,
+				96ADA0B7178EF44800175AAD /* name_locate */,
+				96ADA0B9178EF44800175AAD /* set_comment_all */,
+				96ADA0BB178EF44800175AAD /* set_comment_localonly */,
+				96ADA0BD178EF44800175AAD /* set_comment_removeglobal */,
+				96ADA0BF178EF44800175AAD /* set_comment_revert */,
+				96ADA0C1178EF44800175AAD /* set_compression */,
+				96ADA0C3178EF44800175AAD /* stat_index */,
+				96ADA0C5178EF44800175AAD /* tryopen */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		969EAA6B1785DBA900C79F10 /* ideviceinstaller */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 969EAA721785DBA900C79F10 /* Build configuration list for PBXNativeTarget "ideviceinstaller" */;
+			buildPhases = (
+				969EAA681785DBA900C79F10 /* Sources */,
+				969EAA691785DBA900C79F10 /* Frameworks */,
+				969EAA6A1785DBA900C79F10 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				969EAAD91785DE3900C79F10 /* PBXTargetDependency */,
+			);
+			name = ideviceinstaller;
+			productName = ideviceinstaller;
+			productReference = 969EAA6C1785DBA900C79F10 /* ideviceinstaller */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		969EAA411785DA5000C79F10 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 969EAA441785DA5000C79F10 /* Build configuration list for PBXProject "ideviceinstaller" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 969EAA401785DA5000C79F10;
+			productRefGroup = 969EAA4A1785DA5000C79F10 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 969EAA7C1785DDD600C79F10 /* Products */;
+					ProjectRef = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
+				},
+				{
+					ProductGroup = 96ADA074178EF44700175AAD /* Products */;
+					ProjectRef = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				969EAA6B1785DBA900C79F10 /* ideviceinstaller */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		969EAA961785DDD600C79F10 /* libimobiledevice.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libimobiledevice.a;
+			remoteRef = 969EAA951785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAA981785DDD600C79F10 /* libimobiledevice.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libimobiledevice.dylib;
+			remoteRef = 969EAA971785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAA9A1785DDD600C79F10 /* ideviceclient */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ideviceclient;
+			remoteRef = 969EAA991785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAA9C1785DDD600C79F10 /* afccheck */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = afccheck;
+			remoteRef = 969EAA9B1785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAA9E1785DDD600C79F10 /* lckd-client */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "lckd-client";
+			remoteRef = 969EAA9D1785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAA01785DDD600C79F10 /* filerelaytest */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = filerelaytest;
+			remoteRef = 969EAA9F1785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAA21785DDD600C79F10 /* housearresttest */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = housearresttest;
+			remoteRef = 969EAAA11785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAA41785DDD600C79F10 /* ideviceheartbeat */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ideviceheartbeat;
+			remoteRef = 969EAAA31785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAA61785DDD600C79F10 /* idevice_id */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = idevice_id;
+			remoteRef = 969EAAA51785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAA81785DDD600C79F10 /* ideviceinfo */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ideviceinfo;
+			remoteRef = 969EAAA71785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAAA1785DDD600C79F10 /* ideviceenterrecovery */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ideviceenterrecovery;
+			remoteRef = 969EAAA91785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAAC1785DDD600C79F10 /* idevicesyslog */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = idevicesyslog;
+			remoteRef = 969EAAAB1785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAAE1785DDD600C79F10 /* idevicediagnostics */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = idevicediagnostics;
+			remoteRef = 969EAAAD1785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAB01785DDD600C79F10 /* idevicepair */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = idevicepair;
+			remoteRef = 969EAAAF1785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAB21785DDD600C79F10 /* idevicebackup */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = idevicebackup;
+			remoteRef = 969EAAB11785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAB41785DDD600C79F10 /* idevicebackup2 */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = idevicebackup2;
+			remoteRef = 969EAAB31785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAB61785DDD600C79F10 /* idevicedate */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = idevicedate;
+			remoteRef = 969EAAB51785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAAB81785DDD600C79F10 /* idevicedebugserverproxy */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = idevicedebugserverproxy;
+			remoteRef = 969EAAB71785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAABA1785DDD600C79F10 /* ideviceimagemounter */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ideviceimagemounter;
+			remoteRef = 969EAAB91785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAABC1785DDD600C79F10 /* ideviceprovision */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ideviceprovision;
+			remoteRef = 969EAABB1785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969EAABE1785DDD600C79F10 /* idevicescreenshot */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = idevicescreenshot;
+			remoteRef = 969EAABD1785DDD600C79F10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0A3178EF44800175AAD /* libzip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = libzip.framework;
+			remoteRef = 96ADA0A2178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0A5178EF44800175AAD /* libzip Mac.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "libzip Mac.framework";
+			remoteRef = 96ADA0A4178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0A7178EF44800175AAD /* zipmerge */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = zipmerge;
+			remoteRef = 96ADA0A6178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0A9178EF44800175AAD /* zipcmp */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = zipcmp;
+			remoteRef = 96ADA0A8178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0AB178EF44800175AAD /* ziptorrent */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ziptorrent;
+			remoteRef = 96ADA0AA178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0AD178EF44800175AAD /* add_from_buffer */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = add_from_buffer;
+			remoteRef = 96ADA0AC178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0AF178EF44800175AAD /* add_from_filep */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = add_from_filep;
+			remoteRef = 96ADA0AE178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0B1178EF44800175AAD /* fopen_unchanged */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = fopen_unchanged;
+			remoteRef = 96ADA0B0178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0B3178EF44800175AAD /* fread */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = fread;
+			remoteRef = 96ADA0B2178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0B5178EF44800175AAD /* modify */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = modify;
+			remoteRef = 96ADA0B4178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0B7178EF44800175AAD /* name_locate */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = name_locate;
+			remoteRef = 96ADA0B6178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0B9178EF44800175AAD /* set_comment_all */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = set_comment_all;
+			remoteRef = 96ADA0B8178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0BB178EF44800175AAD /* set_comment_localonly */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = set_comment_localonly;
+			remoteRef = 96ADA0BA178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0BD178EF44800175AAD /* set_comment_removeglobal */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = set_comment_removeglobal;
+			remoteRef = 96ADA0BC178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0BF178EF44800175AAD /* set_comment_revert */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = set_comment_revert;
+			remoteRef = 96ADA0BE178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0C1178EF44800175AAD /* set_compression */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = set_compression;
+			remoteRef = 96ADA0C0178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0C3178EF44800175AAD /* stat_index */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = stat_index;
+			remoteRef = 96ADA0C2178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96ADA0C5178EF44800175AAD /* tryopen */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = tryopen;
+			remoteRef = 96ADA0C4178EF44800175AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		969EAA681785DBA900C79F10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				961FA02E178E38B300B6748E /* ioapi.c in Sources */,
+				961FA030178E38B300B6748E /* unzip.c in Sources */,
+				969EAA771785DC7B00C79F10 /* ideviceinstaller.c in Sources */,
+				961FA031178E38B300B6748E /* zip.c in Sources */,
+				961FA02F178E38B300B6748E /* mztools.c in Sources */,
+				969EAA761785DC6F00C79F10 /* plist.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		969EAAD91785DE3900C79F10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = imobiledevice.dylib;
+			targetProxy = 969EAAD81785DE3900C79F10 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		969EAA501785DA5000C79F10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/usr/local/include";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		969EAA511785DA5000C79F10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(DSTROOT)/usr/local/include";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		969EAA731785DBA900C79F10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HAVE_LIBIMOBILEDEVICE_1_1,
+					"$(inherited)",
+				);
+				OTHER_CFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		969EAA741785DBA900C79F10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = HAVE_LIBIMOBILEDEVICE_1_1;
+				OTHER_CFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		969EAA441785DA5000C79F10 /* Build configuration list for PBXProject "ideviceinstaller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969EAA501785DA5000C79F10 /* Debug */,
+				969EAA511785DA5000C79F10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		969EAA721785DBA900C79F10 /* Build configuration list for PBXNativeTarget "ideviceinstaller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969EAA731785DBA900C79F10 /* Debug */,
+				969EAA741785DBA900C79F10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 969EAA411785DA5000C79F10 /* Project object */;
+}
