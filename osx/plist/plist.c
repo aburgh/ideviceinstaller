@@ -185,7 +185,7 @@ plist_t plist_copy(plist_t node)
  */
 uint32_t plist_array_get_size(plist_t node)
 {
-	return CFArrayGetCount(node);
+	return (uint32_t) CFArrayGetCount(node);
 }
 
 /**
@@ -278,7 +278,7 @@ void plist_array_remove_item(plist_t node, uint32_t n)
  */
 uint32_t plist_dict_get_size(plist_t node)
 {
-	return CFDictionaryGetCount(node);
+	return (uint32_t) CFDictionaryGetCount(node);
 }
 
 /**
@@ -757,7 +757,7 @@ void plist_to_xml(plist_t plist, char **plist_xml, uint32_t * length)
 			CFDataGetBytes(xmlData, CFRangeMake(0, dataLen), data);
 			data[dataLen] = 0;
 			*plist_xml = (char *)data;
-			*length = dataLen;
+			*length = (uint32_t)dataLen;
 		}
 		CFRelease(xmlData);
 	}
