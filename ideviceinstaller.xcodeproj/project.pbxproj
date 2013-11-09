@@ -9,300 +9,10 @@
 /* Begin PBXBuildFile section */
 		969EAA761785DC6F00C79F10 /* plist.c in Sources */ = {isa = PBXBuildFile; fileRef = 969EAA621785DB9200C79F10 /* plist.c */; };
 		969EAA771785DC7B00C79F10 /* ideviceinstaller.c in Sources */ = {isa = PBXBuildFile; fileRef = 969EAA671785DB9200C79F10 /* ideviceinstaller.c */; };
-		969EAADA1785DE4500C79F10 /* libimobiledevice.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 969EAA981785DDD600C79F10 /* libimobiledevice.dylib */; };
 		969EAADC1785DE8000C79F10 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969EAADB1785DE8000C79F10 /* CoreFoundation.framework */; };
-		96ADA0FA178F0D5200175AAD /* libzip Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96ADA0A5178EF44800175AAD /* libzip Mac.framework */; };
+		96F54AB5182E496100C8059B /* libzip Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F54AB4182E496100C8059B /* libzip Mac.framework */; };
+		96F54AB7182E496900C8059B /* libimobiledevice.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F54AB6182E496900C8059B /* libimobiledevice.dylib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		969EAA951785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96B88B30174E0B9900B868D9;
-			remoteInfo = imobiledevice.a;
-		};
-		969EAA971785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC5FE174E493200AF832F;
-			remoteInfo = imobiledevice.dylib;
-		};
-		969EAA991785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC65F174E7D6800AF832F;
-			remoteInfo = ideviceclient;
-		};
-		969EAA9B1785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC67E174EA13500AF832F;
-			remoteInfo = afccheck;
-		};
-		969EAA9D1785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC68B174EAA9C00AF832F;
-			remoteInfo = "lckd-client";
-		};
-		969EAA9F1785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC69B174EABFB00AF832F;
-			remoteInfo = filerelaytest;
-		};
-		969EAAA11785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC6A8174EAD4800AF832F;
-			remoteInfo = housearresttest;
-		};
-		969EAAA31785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC6B5174EAF2900AF832F;
-			remoteInfo = ideviceheartbeat;
-		};
-		969EAAA51785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC6D2174EB17D00AF832F;
-			remoteInfo = idevice_id;
-		};
-		969EAAA71785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC6EB174EB24E00AF832F;
-			remoteInfo = ideviceinfo;
-		};
-		969EAAA91785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC6FB174EBC5B00AF832F;
-			remoteInfo = ideviceenterrecovery;
-		};
-		969EAAAB1785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC70A174EBDCC00AF832F;
-			remoteInfo = idevicesyslog;
-		};
-		969EAAAD1785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96CCC719174EC00100AF832F;
-			remoteInfo = idevicediagnostics;
-		};
-		969EAAAF1785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9609CAF2174EF50100E744BE;
-			remoteInfo = idevicepair;
-		};
-		969EAAB11785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96F0F5FA174EFFAC0014879C;
-			remoteInfo = idevicebackup;
-		};
-		969EAAB31785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96F0F60E174F01420014879C;
-			remoteInfo = idevicebackup2;
-		};
-		969EAAB51785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96F0F637175223B70014879C;
-			remoteInfo = idevicedate;
-		};
-		969EAAB71785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96F0F655175224C20014879C;
-			remoteInfo = idevicedebugserverproxy;
-		};
-		969EAAB91785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96F0F66717522D320014879C;
-			remoteInfo = ideviceimagemounter;
-		};
-		969EAABB1785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96F0F67C175231690014879C;
-			remoteInfo = ideviceprovision;
-		};
-		969EAABD1785DDD600C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96F0F68E1752322C0014879C;
-			remoteInfo = idevicescreenshot;
-		};
-		969EAAD81785DE3900C79F10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 96CCC5FD174E493200AF832F;
-			remoteInfo = imobiledevice.dylib;
-		};
-		96ADA0A2178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BDC71E015B182B200236D3C;
-			remoteInfo = libzip;
-		};
-		96ADA0A4178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4B01D68B15B2F3F1002D5007;
-			remoteInfo = "libzip Mac";
-		};
-		96ADA0A6178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4B01D6FD15B2F4B1002D5007;
-			remoteInfo = zipmerge;
-		};
-		96ADA0A8178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4B01D71315B2F4EB002D5007;
-			remoteInfo = zipcmp;
-		};
-		96ADA0AA178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4B01D71E15B2F4F7002D5007;
-			remoteInfo = ziptorrent;
-		};
-		96ADA0AC178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD5A415BC2D4C00920691;
-			remoteInfo = add_from_buffer;
-		};
-		96ADA0AE178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD5C115BC2DC900920691;
-			remoteInfo = add_from_filep;
-		};
-		96ADA0B0178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD5D015BC2DF200920691;
-			remoteInfo = fopen_unchanged;
-		};
-		96ADA0B2178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD5DF15BC2F3700920691;
-			remoteInfo = fread;
-		};
-		96ADA0B4178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD58915BC2CEA00920691;
-			remoteInfo = modify;
-		};
-		96ADA0B6178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD5EE15BC2F6600920691;
-			remoteInfo = name_locate;
-		};
-		96ADA0B8178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD5FD15BC2F9500920691;
-			remoteInfo = set_comment_all;
-		};
-		96ADA0BA178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD60A15BC2FA300920691;
-			remoteInfo = set_comment_localonly;
-		};
-		96ADA0BC178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD61715BC2FA900920691;
-			remoteInfo = set_comment_removeglobal;
-		};
-		96ADA0BE178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD62415BC2FAC00920691;
-			remoteInfo = set_comment_revert;
-		};
-		96ADA0C0178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD63115BC2FAE00920691;
-			remoteInfo = set_compression;
-		};
-		96ADA0C2178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD64215BC2FEF00920691;
-			remoteInfo = stat_index;
-		};
-		96ADA0C4178EF44800175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4BACD65015BC301300920691;
-			remoteInfo = tryopen;
-		};
-		96ADA0F8178F0D4200175AAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4B01D68A15B2F3F1002D5007;
-			remoteInfo = "libzip Mac";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		969EAA6A1785DBA900C79F10 /* CopyFiles */ = {
@@ -333,9 +43,9 @@
 		969EAA671785DB9200C79F10 /* ideviceinstaller.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ideviceinstaller.c; sourceTree = "<group>"; };
 		969EAA6C1785DBA900C79F10 /* ideviceinstaller */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ideviceinstaller; sourceTree = BUILT_PRODUCTS_DIR; };
 		969EAA781785DC9200C79F10 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libimobiledevice.xcodeproj; path = ../libimobiledevice/libimobiledevice.xcodeproj; sourceTree = "<group>"; };
 		969EAADB1785DE8000C79F10 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		96ADA073178EF44700175AAD /* libzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libzip.xcodeproj; path = deps/libzip/xcode/libzip.xcodeproj; sourceTree = "<group>"; };
+		96F54AB4182E496100C8059B /* libzip Mac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "libzip Mac.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F54AB6182E496900C8059B /* libimobiledevice.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libimobiledevice.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,9 +53,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96ADA0FA178F0D5200175AAD /* libzip Mac.framework in Frameworks */,
+				96F54AB7182E496900C8059B /* libimobiledevice.dylib in Frameworks */,
+				96F54AB5182E496100C8059B /* libzip Mac.framework in Frameworks */,
 				969EAADC1785DE8000C79F10 /* CoreFoundation.framework in Frameworks */,
-				969EAADA1785DE4500C79F10 /* libimobiledevice.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,8 +65,6 @@
 		969EAA401785DA5000C79F10 = {
 			isa = PBXGroup;
 			children = (
-				969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */,
-				96ADA073178EF44700175AAD /* libzip.xcodeproj */,
 				969EAA641785DB9200C79F10 /* README */,
 				969EAA551785DB9200C79F10 /* AUTHORS */,
 				969EAA581785DB9200C79F10 /* COPYING */,
@@ -435,63 +143,12 @@
 		969EAA7A1785DCB600C79F10 /* Libraries and Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96F54AB6182E496900C8059B /* libimobiledevice.dylib */,
+				96F54AB4182E496100C8059B /* libzip Mac.framework */,
 				969EAADB1785DE8000C79F10 /* CoreFoundation.framework */,
 				969EAA781785DC9200C79F10 /* libz.dylib */,
 			);
 			name = "Libraries and Frameworks";
-			sourceTree = "<group>";
-		};
-		969EAA7C1785DDD600C79F10 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				969EAA961785DDD600C79F10 /* libimobiledevice.a */,
-				969EAA981785DDD600C79F10 /* libimobiledevice.dylib */,
-				969EAA9A1785DDD600C79F10 /* ideviceclient */,
-				969EAA9C1785DDD600C79F10 /* afccheck */,
-				969EAA9E1785DDD600C79F10 /* lckd-client */,
-				969EAAA01785DDD600C79F10 /* filerelaytest */,
-				969EAAA21785DDD600C79F10 /* housearresttest */,
-				969EAAA41785DDD600C79F10 /* ideviceheartbeat */,
-				969EAAA61785DDD600C79F10 /* idevice_id */,
-				969EAAA81785DDD600C79F10 /* ideviceinfo */,
-				969EAAAA1785DDD600C79F10 /* ideviceenterrecovery */,
-				969EAAAC1785DDD600C79F10 /* idevicesyslog */,
-				969EAAAE1785DDD600C79F10 /* idevicediagnostics */,
-				969EAAB01785DDD600C79F10 /* idevicepair */,
-				969EAAB21785DDD600C79F10 /* idevicebackup */,
-				969EAAB41785DDD600C79F10 /* idevicebackup2 */,
-				969EAAB61785DDD600C79F10 /* idevicedate */,
-				969EAAB81785DDD600C79F10 /* idevicedebugserverproxy */,
-				969EAABA1785DDD600C79F10 /* ideviceimagemounter */,
-				969EAABC1785DDD600C79F10 /* ideviceprovision */,
-				969EAABE1785DDD600C79F10 /* idevicescreenshot */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		96ADA074178EF44700175AAD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				96ADA0A3178EF44800175AAD /* libzip.framework */,
-				96ADA0A5178EF44800175AAD /* libzip Mac.framework */,
-				96ADA0A7178EF44800175AAD /* zipmerge */,
-				96ADA0A9178EF44800175AAD /* zipcmp */,
-				96ADA0AB178EF44800175AAD /* ziptorrent */,
-				96ADA0AD178EF44800175AAD /* add_from_buffer */,
-				96ADA0AF178EF44800175AAD /* add_from_filep */,
-				96ADA0B1178EF44800175AAD /* fopen_unchanged */,
-				96ADA0B3178EF44800175AAD /* fread */,
-				96ADA0B5178EF44800175AAD /* modify */,
-				96ADA0B7178EF44800175AAD /* name_locate */,
-				96ADA0B9178EF44800175AAD /* set_comment_all */,
-				96ADA0BB178EF44800175AAD /* set_comment_localonly */,
-				96ADA0BD178EF44800175AAD /* set_comment_removeglobal */,
-				96ADA0BF178EF44800175AAD /* set_comment_revert */,
-				96ADA0C1178EF44800175AAD /* set_compression */,
-				96ADA0C3178EF44800175AAD /* stat_index */,
-				96ADA0C5178EF44800175AAD /* tryopen */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,8 +165,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				96ADA0F9178F0D4200175AAD /* PBXTargetDependency */,
-				969EAAD91785DE3900C79F10 /* PBXTargetDependency */,
 			);
 			name = ideviceinstaller;
 			productName = ideviceinstaller;
@@ -534,298 +189,12 @@
 			mainGroup = 969EAA401785DA5000C79F10;
 			productRefGroup = 969EAA4A1785DA5000C79F10 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 969EAA7C1785DDD600C79F10 /* Products */;
-					ProjectRef = 969EAA7B1785DDD600C79F10 /* libimobiledevice.xcodeproj */;
-				},
-				{
-					ProductGroup = 96ADA074178EF44700175AAD /* Products */;
-					ProjectRef = 96ADA073178EF44700175AAD /* libzip.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				969EAA6B1785DBA900C79F10 /* ideviceinstaller */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		969EAA961785DDD600C79F10 /* libimobiledevice.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libimobiledevice.a;
-			remoteRef = 969EAA951785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAA981785DDD600C79F10 /* libimobiledevice.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libimobiledevice.dylib;
-			remoteRef = 969EAA971785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAA9A1785DDD600C79F10 /* ideviceclient */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = ideviceclient;
-			remoteRef = 969EAA991785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAA9C1785DDD600C79F10 /* afccheck */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = afccheck;
-			remoteRef = 969EAA9B1785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAA9E1785DDD600C79F10 /* lckd-client */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "lckd-client";
-			remoteRef = 969EAA9D1785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAA01785DDD600C79F10 /* filerelaytest */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = filerelaytest;
-			remoteRef = 969EAA9F1785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAA21785DDD600C79F10 /* housearresttest */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = housearresttest;
-			remoteRef = 969EAAA11785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAA41785DDD600C79F10 /* ideviceheartbeat */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = ideviceheartbeat;
-			remoteRef = 969EAAA31785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAA61785DDD600C79F10 /* idevice_id */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = idevice_id;
-			remoteRef = 969EAAA51785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAA81785DDD600C79F10 /* ideviceinfo */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = ideviceinfo;
-			remoteRef = 969EAAA71785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAAA1785DDD600C79F10 /* ideviceenterrecovery */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = ideviceenterrecovery;
-			remoteRef = 969EAAA91785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAAC1785DDD600C79F10 /* idevicesyslog */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = idevicesyslog;
-			remoteRef = 969EAAAB1785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAAE1785DDD600C79F10 /* idevicediagnostics */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = idevicediagnostics;
-			remoteRef = 969EAAAD1785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAB01785DDD600C79F10 /* idevicepair */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = idevicepair;
-			remoteRef = 969EAAAF1785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAB21785DDD600C79F10 /* idevicebackup */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = idevicebackup;
-			remoteRef = 969EAAB11785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAB41785DDD600C79F10 /* idevicebackup2 */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = idevicebackup2;
-			remoteRef = 969EAAB31785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAB61785DDD600C79F10 /* idevicedate */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = idevicedate;
-			remoteRef = 969EAAB51785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAAB81785DDD600C79F10 /* idevicedebugserverproxy */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = idevicedebugserverproxy;
-			remoteRef = 969EAAB71785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAABA1785DDD600C79F10 /* ideviceimagemounter */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = ideviceimagemounter;
-			remoteRef = 969EAAB91785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAABC1785DDD600C79F10 /* ideviceprovision */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = ideviceprovision;
-			remoteRef = 969EAABB1785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		969EAABE1785DDD600C79F10 /* idevicescreenshot */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = idevicescreenshot;
-			remoteRef = 969EAABD1785DDD600C79F10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0A3178EF44800175AAD /* libzip.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = libzip.framework;
-			remoteRef = 96ADA0A2178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0A5178EF44800175AAD /* libzip Mac.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = "libzip Mac.framework";
-			remoteRef = 96ADA0A4178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0A7178EF44800175AAD /* zipmerge */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = zipmerge;
-			remoteRef = 96ADA0A6178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0A9178EF44800175AAD /* zipcmp */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = zipcmp;
-			remoteRef = 96ADA0A8178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0AB178EF44800175AAD /* ziptorrent */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = ziptorrent;
-			remoteRef = 96ADA0AA178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0AD178EF44800175AAD /* add_from_buffer */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = add_from_buffer;
-			remoteRef = 96ADA0AC178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0AF178EF44800175AAD /* add_from_filep */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = add_from_filep;
-			remoteRef = 96ADA0AE178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0B1178EF44800175AAD /* fopen_unchanged */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = fopen_unchanged;
-			remoteRef = 96ADA0B0178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0B3178EF44800175AAD /* fread */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = fread;
-			remoteRef = 96ADA0B2178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0B5178EF44800175AAD /* modify */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = modify;
-			remoteRef = 96ADA0B4178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0B7178EF44800175AAD /* name_locate */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = name_locate;
-			remoteRef = 96ADA0B6178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0B9178EF44800175AAD /* set_comment_all */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = set_comment_all;
-			remoteRef = 96ADA0B8178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0BB178EF44800175AAD /* set_comment_localonly */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = set_comment_localonly;
-			remoteRef = 96ADA0BA178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0BD178EF44800175AAD /* set_comment_removeglobal */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = set_comment_removeglobal;
-			remoteRef = 96ADA0BC178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0BF178EF44800175AAD /* set_comment_revert */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = set_comment_revert;
-			remoteRef = 96ADA0BE178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0C1178EF44800175AAD /* set_compression */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = set_compression;
-			remoteRef = 96ADA0C0178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0C3178EF44800175AAD /* stat_index */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = stat_index;
-			remoteRef = 96ADA0C2178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		96ADA0C5178EF44800175AAD /* tryopen */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = tryopen;
-			remoteRef = 96ADA0C4178EF44800175AAD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		969EAA681785DBA900C79F10 /* Sources */ = {
@@ -838,19 +207,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		969EAAD91785DE3900C79F10 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = imobiledevice.dylib;
-			targetProxy = 969EAAD81785DE3900C79F10 /* PBXContainerItemProxy */;
-		};
-		96ADA0F9178F0D4200175AAD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "libzip Mac";
-			targetProxy = 96ADA0F8178F0D4200175AAD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		969EAA501785DA5000C79F10 /* Debug */ = {

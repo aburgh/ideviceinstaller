@@ -33,4 +33,3 @@ src/.libs
 src/ideviceinstaller
 .DS_Store
 xcuserdata
-*.xccheckout
