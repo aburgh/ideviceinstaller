@@ -47,6 +47,8 @@
 
 #include <zip.h>
 
+#define ITUNES_METADATA_PLIST_FILENAME "iTunesMetadata.plist"
+
 const char PKG_PATH[] = "PublicStaging";
 const char APPARCH_PATH[] = "ApplicationArchives";
 
@@ -54,18 +56,24 @@ char *udid = NULL;
 char *options = NULL;
 char *appid = NULL;
 
-int list_apps_mode = 0;
-int install_mode = 0;
-int uninstall_mode = 0;
-int upgrade_mode = 0;
-int list_archives_mode = 0;
-int archive_mode = 0;
-int restore_mode = 0;
-int remove_archive_mode = 0;
+enum cmd_mode {
+	CMD_NONE = 0,
+	CMD_LIST_APPS,
+	CMD_INSTALL,
+	CMD_UNINSTALL,
+	CMD_UPGRADE,
+	CMD_LIST_ARCHIVES,
+	CMD_ARCHIVE,
+	CMD_RESTORE,
+	CMD_REMOVE_ARCHIVE
+};
+
+int cmd = CMD_NONE;
 
 char *last_status = NULL;
 int wait_for_op_complete = 0;
 int notification_expected = 0;
+int is_device_connected = 0;
 int op_completed = 0;
 int err_occured = 0;
 int notified = 0;
@@ -105,13 +113,13 @@ static void status_cb(const char *operation, plist_t status)
 		}
 		if (!nerror) {
 			if (last_status && (strcmp(last_status, status_msg))) {
-				printf("\n");
+				printf("\r");
 			}
 
 			if (!npercent) {
 				printf("%s - %s\n", operation, status_msg);
 			} else {
-				printf("%s - %s (%d%%)\r", operation, status_msg, percent);
+				printf("%s - %s (%d%%)\n", operation, status_msg, percent);
 			}
 		} else {
 			char *err_msg = NULL;
@@ -143,7 +151,6 @@ static int zip_get_contents(struct zip *zf, const char *filename, int locate_fla
 	*len = 0;
 
 	if (zindex < 0) {
-		fprintf(stderr, "ERROR: could not locate %s in archive!\n", filename);
 		return -1;
 	}
 
@@ -233,25 +240,60 @@ static int zip_get_app_directory(struct zip* zf, char** path)
 	return 0;
 }
 
-static void do_wait_when_needed()
+static void idevice_event_callback(const idevice_event_t* event, void* userdata)
 {
-	int i = 0;
+	if (event->event == IDEVICE_DEVICE_REMOVE) {
+		is_device_connected = 0;
+	}
+}
+
+static void idevice_wait_for_operation_to_complete()
+{
 	struct timespec ts;
 	ts.tv_sec = 0;
 	ts.tv_nsec = 500000000;
+	is_device_connected = 1;
+
+	/* subscribe to make sure to exit on device removal */
+	idevice_event_subscribe(idevice_event_callback, NULL);
 
 	/* wait for operation to complete */
 	while (wait_for_op_complete && !op_completed && !err_occured
-		   && !notified && (i < 60)) {
+		   && !notified && is_device_connected) {
 		nanosleep(&ts, NULL);
-		i++;
 	}
 
 	/* wait some time if a notification is expected */
-	while (notification_expected && !notified && !err_occured && (i < 10)) {
+	while (notification_expected && !notified && !err_occured && is_device_connected) {
 		nanosleep(&ts, NULL);
-		i++;
 	}
+
+	idevice_event_unsubscribe();
+}
+
+static int str_is_udid(const char* str)
+{
+	const char allowed[] = "0123456789abcdefABCDEF";
+
+	/* handle NULL case */
+	if (str == NULL)
+		return -1;
+
+	int length = strlen(str);
+
+	/* verify length */
+	if (length != 40)
+		return -1;
+
+	/* check for invalid characters */
+	while(length--) {
+		/* invalid character in udid? */
+		if (strchr(allowed, str[length]) == NULL) {
+			return -1;
+		}
+	} 
+
+	return 0;
 }
 
 static void print_usage(int argc, char **argv)
@@ -262,7 +304,7 @@ static void print_usage(int argc, char **argv)
 	printf("Usage: %s OPTIONS\n", (name ? name + 1 : argv[0]));
 	printf("Manage apps on an iDevice.\n\n");
 	printf
-		("  -U, --udid UDID\tTarget specific device by its 40-digit device UDID.\n"
+		("  -u, --udid UDID\tTarget specific device by its 40-digit device UDID.\n"
 		 "  -l, --list-apps\tList apps, possible options:\n"
 		 "       -o list_user\t- list user apps only (this is the default)\n"
 		 "       -o list_system\t- list system apps only\n"
@@ -270,7 +312,7 @@ static void print_usage(int argc, char **argv)
 		 "       -o xml\t\t- print full output as xml plist\n"
 		 "  -i, --install ARCHIVE\tInstall app from package file specified by ARCHIVE.\n"
 		 "                       \tARCHIVE can also be a .ipcc file for carrier bundles.\n"
-		 "  -u, --uninstall APPID\tUninstall app specified by APPID.\n"
+		 "  -U, --uninstall APPID\tUninstall app specified by APPID.\n"
 		 "  -g, --upgrade ARCHIVE\tUpgrade app from package file specified by ARCHIVE.\n"
 		 "  -L, --list-archives\tList archived applications, possible options:\n"
 		 "       -o xml\t\t- print full output as xml plist\n"
@@ -291,10 +333,10 @@ static void parse_opts(int argc, char **argv)
 {
 	static struct option longopts[] = {
 		{"help", 0, NULL, 'h'},
-		{"udid", 1, NULL, 'U'},
+		{"udid", 1, NULL, 'u'},
 		{"list-apps", 0, NULL, 'l'},
 		{"install", 1, NULL, 'i'},
-		{"uninstall", 1, NULL, 'u'},
+		{"uninstall", 1, NULL, 'U'},
 		{"upgrade", 1, NULL, 'g'},
 		{"list-archives", 0, NULL, 'L'},
 		{"archive", 1, NULL, 'a'},
@@ -313,47 +355,77 @@ static void parse_opts(int argc, char **argv)
 			break;
 		}
 
+		/* verify if multiple modes have been supplied */
+		switch (c) {
+		case 'l':
+		case 'i':
+		case 'g':
+		case 'L':
+		case 'a':
+		case 'r':
+		case 'R':
+			if (cmd != CMD_NONE) {
+				printf("ERROR: A mode has already been supplied. Multiple modes are not supported.\n");
+				print_usage(argc, argv);
+				exit(2);
+			}
+			break;
+		default:
+			break;
+		}
+
 		switch (c) {
 		case 'h':
 			print_usage(argc, argv);
 			exit(0);
-		case 'U':
-			if (strlen(optarg) != 40) {
-				printf("%s: invalid UDID specified (length != 40)\n",
-					   argv[0]);
+		case 'u':
+			if (str_is_udid(optarg) == 0) {
+				udid = strdup(optarg);
+				break;
+			}
+			if (strchr(optarg, '.') != NULL) {
+				fprintf(stderr, "WARNING: Using \"-u\" for \"--uninstall\" is deprecated. Please use \"-U\" instead.\n");
+				cmd = CMD_UNINSTALL;
+				appid = strdup(optarg);
+			} else {
+				printf("ERROR: Invalid UDID specified\n");
 				print_usage(argc, argv);
 				exit(2);
 			}
-			udid = strdup(optarg);
 			break;
 		case 'l':
-			list_apps_mode = 1;
+			cmd = CMD_LIST_APPS;
 			break;
 		case 'i':
-			install_mode = 1;
+			cmd = CMD_INSTALL;
 			appid = strdup(optarg);
 			break;
-		case 'u':
-			uninstall_mode = 1;
+		case 'U':
+			if (str_is_udid(optarg) == 0) {
+				fprintf(stderr, "WARNING: Using \"-U\" for \"--udid\" is deprecated. Please use \"-u\" instead.\n");
+				udid = strdup(optarg);
+				break;
+			}
+			cmd = CMD_UNINSTALL;
 			appid = strdup(optarg);
 			break;
 		case 'g':
-			upgrade_mode = 1;
+			cmd = CMD_UPGRADE;
 			appid = strdup(optarg);
 			break;
 		case 'L':
-			list_archives_mode = 1;
+			cmd = CMD_LIST_ARCHIVES;
 			break;
 		case 'a':
-			archive_mode = 1;
+			cmd = CMD_ARCHIVE;
 			appid = strdup(optarg);
 			break;
 		case 'r':
-			restore_mode = 1;
+			cmd = CMD_RESTORE;
 			appid = strdup(optarg);
 			break;
 		case 'R':
-			remove_archive_mode = 1;
+			cmd = CMD_REMOVE_ARCHIVE;
 			appid = strdup(optarg);
 			break;
 		case 'o':
@@ -377,7 +449,11 @@ static void parse_opts(int argc, char **argv)
 		}
 	}
 
-	if (optind <= 1 || (argc - optind > 0)) {
+	if (cmd == CMD_NONE) {
+		printf("ERROR: No mode/operation was supplied.\n");
+	}
+
+	if (cmd == CMD_NONE || optind <= 1 || (argc - optind > 0)) {
 		print_usage(argc, argv);
 		exit(2);
 	}
@@ -478,6 +554,7 @@ int main(int argc, char **argv)
 	uint16_t service = 0;
 #endif
 	int res = 0;
+	char *bundleidentifier = NULL;
 
 	parse_opts(argc, argv);
 
@@ -485,7 +562,7 @@ int main(int argc, char **argv)
 	argv += optind;
 
 	if (IDEVICE_E_SUCCESS != idevice_new(&phone, udid)) {
-		fprintf(stderr, "No iPhone found, is it plugged in?\n");
+		fprintf(stderr, "No iOS device found, is it plugged in?\n");
 		return -1;
 	}
 
@@ -546,7 +623,7 @@ run_again:
 	}
 	notification_expected = 0;
 
-	if (list_apps_mode) {
+	if (cmd == CMD_LIST_APPS) {
 		int xml_mode = 0;
 		plist_t client_opts = instproxy_client_options_new();
 		instproxy_client_options_add(client_opts, "ApplicationType", "User", NULL);
@@ -639,7 +716,7 @@ run_again:
 			free(s_appid);
 		}
 		plist_free(apps);
-	} else if (install_mode || upgrade_mode) {
+	} else if (cmd == CMD_INSTALL || cmd == CMD_UPGRADE) {
 		plist_t sinf = NULL;
 		plist_t meta = NULL;
 		char *pkgname = NULL;
@@ -707,7 +784,7 @@ run_again:
 				afc_make_directory(afc, pkgname);
 			}
 
-			printf("Uploading %s package contents...\n", basename(ipcc));
+			printf("Uploading %s package contents... ", basename(ipcc));
 
 			/* extract the contents of the .ipcc file to PublicStaging/<name>.ipcc directory */
 			zip_uint64_t numzf = zip_get_num_entries(zf, 0);
@@ -785,17 +862,21 @@ run_again:
 				}
 			}
 			free(ipcc);
-			printf("done.\n");
+			printf("DONE.\n");
 
 			instproxy_client_options_add(client_opts, "PackageType", "CarrierBundle", NULL);
 		} else if (S_ISDIR(fst.st_mode)) {
 			/* upload developer app directory */
 			instproxy_client_options_add(client_opts, "PackageType", "Developer", NULL);
 
-			asprintf(&pkgname, "%s/%s", PKG_PATH, basename(appid));
+			if (asprintf(&pkgname, "%s/%s", PKG_PATH, basename(appid)) < 0) {
+				fprintf(stderr, "ERROR: Out of memory allocating pkgname!?\n");
+				goto leave_cleanup;
+			}
 
-			printf("Uploading %s package contents...\n", basename(appid));
+			printf("Uploading %s package contents... ", basename(appid));
 			afc_upload_dir(afc, appid, pkgname);
+			printf("DONE.\n");
 		} else {
 			zf = zip_open(appid, 0, &errp);
 			if (!zf) {
@@ -807,13 +888,15 @@ run_again:
 			char *zbuf = NULL;
 			uint32_t len = 0;
 			plist_t meta_dict = NULL;
-			if (zip_get_contents(zf, "iTunesMetadata.plist", 0, &zbuf, &len) == 0) {
+			if (zip_get_contents(zf, ITUNES_METADATA_PLIST_FILENAME, 0, &zbuf, &len) == 0) {
 				meta = plist_new_data(zbuf, len);
 				if (memcmp(zbuf, "bplist00", 8) == 0) {
 					plist_from_bin(zbuf, len, &meta_dict);
 				} else {
 					plist_from_xml(zbuf, len, &meta_dict);
 				}
+			} else {
+				fprintf(stderr, "WARNING: could not locate %s in archive!\n", ITUNES_METADATA_PLIST_FILENAME);
 			}
 			if (zbuf) {
 				free(zbuf);
@@ -839,6 +922,7 @@ run_again:
 			strcat(filename, "Info.plist");
 
 			if (zip_get_contents(zf, filename, 0, &zbuf, &len) < 0) {
+				fprintf(stderr, "WARNING: could not locate %s in archive!\n", filename);
 				zip_unchange_all(zf);
 				zip_close(zf);
 				goto leave_cleanup;
@@ -858,7 +942,6 @@ run_again:
 			}
 
 			char *bundleexecutable = NULL;
-			char *bundleidentifier = NULL;
 
 			plist_t bname = plist_dict_get_item(info, "CFBundleExecutable");
 			if (bname) {
@@ -868,7 +951,6 @@ run_again:
 			bname = plist_dict_get_item(info, "CFBundleIdentifier");
 			if (bname) {
 				plist_get_string_val(bname, &bundleidentifier);
-				printf("Installing bundle %s.\n", bundleidentifier);
 			}
 			plist_free(info);
 			info = NULL;
@@ -892,6 +974,8 @@ run_again:
 			len = 0;
 			if (zip_get_contents(zf, sinfname, 0, &zbuf, &len) == 0) {
 				sinf = plist_new_data(zbuf, len);
+			} else {
+				fprintf(stderr, "WARNING: could not locate %s in archive!\n", sinfname);
 			}
 			free(sinfname);
 			if (zbuf) {
@@ -905,14 +989,14 @@ run_again:
 				goto leave_cleanup;
 			}
 
-			printf("Copying '%s' --> '%s'\n", appid, pkgname);
+			printf("Copying '%s' to device... ", appid);
 
 			if (afc_upload_file(afc, appid, pkgname) < 0) {
 				free(pkgname);
 				goto leave_cleanup;
 			}
 
-			printf("done.\n");
+			printf("DONE.\n");
 
 			if (bundleidentifier) {
 				instproxy_client_options_add(client_opts, "CFBundleIdentifier", bundleidentifier, NULL);
@@ -930,15 +1014,15 @@ run_again:
 		}
 
 		/* perform installation or upgrade */
-		if (install_mode) {
-			printf("Installing '%s'\n", pkgname);
+		if (cmd == CMD_INSTALL) {
+			printf("Installing '%s'\n", bundleidentifier);
 #ifdef HAVE_LIBIMOBILEDEVICE_1_1
 			instproxy_install(ipc, pkgname, client_opts, status_cb, NULL);
 #else
 			instproxy_install(ipc, pkgname, client_opts, status_cb);
 #endif
 		} else {
-			printf("Upgrading '%s'\n", pkgname);
+			printf("Upgrading '%s'\n", bundleidentifier);
 #ifdef HAVE_LIBIMOBILEDEVICE_1_1
 			instproxy_upgrade(ipc, pkgname, client_opts, status_cb, NULL);
 #else
@@ -949,15 +1033,16 @@ run_again:
 		free(pkgname);
 		wait_for_op_complete = 1;
 		notification_expected = 1;
-	} else if (uninstall_mode) {
+	} else if (cmd == CMD_UNINSTALL) {
+		printf("Uninstalling '%s'\n", appid);
 #ifdef HAVE_LIBIMOBILEDEVICE_1_1
 		instproxy_uninstall(ipc, appid, NULL, status_cb, NULL);
 #else
 		instproxy_uninstall(ipc, appid, NULL, status_cb);
 #endif
 		wait_for_op_complete = 1;
-		notification_expected = 1;
-	} else if (list_archives_mode) {
+		notification_expected = 0;
+	} else if (cmd == CMD_LIST_ARCHIVES) {
 		int xml_mode = 0;
 		plist_t dict = NULL;
 		plist_t lres = NULL;
@@ -1048,7 +1133,7 @@ run_again:
 		}
 		while (node);
 		plist_free(dict);
-	} else if (archive_mode) {
+	} else if (cmd == CMD_ARCHIVE) {
 		char *copy_path = NULL;
 		int remove_after_copy = 0;
 		int skip_uninstall = 1;
@@ -1140,7 +1225,7 @@ run_again:
 			notification_expected = 1;
 		}
 
-		do_wait_when_needed();
+		idevice_wait_for_operation_to_complete();
 
 		if (copy_path) {
 			if (err_occured) {
@@ -1213,7 +1298,7 @@ run_again:
 			}
 
 			/* copy file over */
-			printf("Copying '%s' --> '%s'\n", remotefile, localfile);
+			printf("Copying '%s' --> '%s'... ", remotefile, localfile);
 			free(remotefile);
 			free(localfile);
 
@@ -1240,7 +1325,8 @@ run_again:
 			afc_file_close(afc, af);
 			fclose(f);
 
-			printf("done.\n");
+			printf("DONE.\n");
+
 			if (total != fsize) {
 				fprintf(stderr, "WARNING: remote and local file sizes don't match (%d != %d)\n", fsize, total);
 				if (remove_after_copy) {
@@ -1252,8 +1338,7 @@ run_again:
 			if (remove_after_copy) {
 				/* remove archive if requested */
 				printf("Removing '%s'\n", appid);
-				archive_mode = 0;
-				remove_archive_mode = 1;
+				cmd = CMD_REMOVE_ARCHIVE;
 				free(options);
 				options = NULL;
 				if (LOCKDOWN_E_SUCCESS != lockdownd_client_new_with_handshake(phone, &client, "ideviceinstaller")) {
@@ -1264,7 +1349,7 @@ run_again:
 			}
 		}
 		goto leave_cleanup;
-	} else if (restore_mode) {
+	} else if (cmd == CMD_RESTORE) {
 #ifdef HAVE_LIBIMOBILEDEVICE_1_1
 		instproxy_restore(ipc, appid, NULL, status_cb, NULL);
 #else
@@ -1272,7 +1357,7 @@ run_again:
 #endif
 		wait_for_op_complete = 1;
 		notification_expected = 1;
-	} else if (remove_archive_mode) {
+	} else if (cmd == CMD_REMOVE_ARCHIVE) {
 #ifdef HAVE_LIBIMOBILEDEVICE_1_1
 		instproxy_remove_archive(ipc, appid, NULL, status_cb, NULL);
 #else
@@ -1292,9 +1377,12 @@ run_again:
 		client = NULL;
 	}
 
-	do_wait_when_needed();
+	idevice_wait_for_operation_to_complete();
 
-  leave_cleanup:
+leave_cleanup:
+	if (bundleidentifier) {
+		free(bundleidentifier);
+	}
 	if (np) {
 		np_client_free(np);
 	}
