@@ -296,6 +296,7 @@
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
 				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -309,6 +310,7 @@
 					HAVE_LIBIMOBILEDEVICE_1_1_5,
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
 				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
