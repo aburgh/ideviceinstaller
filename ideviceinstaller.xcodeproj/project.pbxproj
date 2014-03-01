@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		969EAA761785DC6F00C79F10 /* plist.c in Sources */ = {isa = PBXBuildFile; fileRef = 969EAA621785DB9200C79F10 /* plist.c */; };
 		969EAA771785DC7B00C79F10 /* ideviceinstaller.c in Sources */ = {isa = PBXBuildFile; fileRef = 969EAA671785DB9200C79F10 /* ideviceinstaller.c */; };
 		969EAADC1785DE8000C79F10 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969EAADB1785DE8000C79F10 /* CoreFoundation.framework */; };
 		96F54AB5182E496100C8059B /* libzip Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F54AB4182E496100C8059B /* libzip Mac.framework */; };
@@ -36,8 +35,6 @@
 		969EAA5D1785DB9200C79F10 /* Makefile.am */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 		969EAA5E1785DB9200C79F10 /* ideviceinstaller.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ideviceinstaller.1; sourceTree = "<group>"; };
 		969EAA5F1785DB9200C79F10 /* NEWS */ = {isa = PBXFileReference; lastKnownFileType = text; path = NEWS; sourceTree = "<group>"; };
-		969EAA621785DB9200C79F10 /* plist.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = plist.c; sourceTree = "<group>"; };
-		969EAA631785DB9200C79F10 /* plist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plist.h; sourceTree = "<group>"; };
 		969EAA641785DB9200C79F10 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		969EAA661785DB9200C79F10 /* Makefile.am */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 		969EAA671785DB9200C79F10 /* ideviceinstaller.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ideviceinstaller.c; sourceTree = "<group>"; };
@@ -72,7 +69,6 @@
 				969EAA5F1785DB9200C79F10 /* NEWS */,
 				969EAA751785DBE400C79F10 /* autoconf */,
 				969EAA5C1785DB9200C79F10 /* man */,
-				969EAA601785DB9200C79F10 /* osx */,
 				969EAA651785DB9200C79F10 /* src */,
 				969EAA7A1785DCB600C79F10 /* Libraries and Frameworks */,
 				969EAA4A1785DA5000C79F10 /* Products */,
@@ -102,23 +98,6 @@
 				969EAA5E1785DB9200C79F10 /* ideviceinstaller.1 */,
 			);
 			path = man;
-			sourceTree = "<group>";
-		};
-		969EAA601785DB9200C79F10 /* osx */ = {
-			isa = PBXGroup;
-			children = (
-				969EAA611785DB9200C79F10 /* plist */,
-			);
-			path = osx;
-			sourceTree = "<group>";
-		};
-		969EAA611785DB9200C79F10 /* plist */ = {
-			isa = PBXGroup;
-			children = (
-				969EAA621785DB9200C79F10 /* plist.c */,
-				969EAA631785DB9200C79F10 /* plist.h */,
-			);
-			path = plist;
 			sourceTree = "<group>";
 		};
 		969EAA651785DB9200C79F10 /* src */ = {
@@ -202,7 +181,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				969EAA771785DC7B00C79F10 /* ideviceinstaller.c in Sources */,
-				969EAA761785DC6F00C79F10 /* plist.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
