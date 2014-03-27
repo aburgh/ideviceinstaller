@@ -14,6 +14,6 @@
       location = "group:deps/libzip/xcode/libzip.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:deps/libplist/libplist.xcodeproj">
+      location = "group:deps/libimobiledevice/deps/libplist/libplist.xcodeproj">
    </FileRef>
 </Workspace>
