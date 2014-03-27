@@ -47,6 +47,13 @@
 
 #include <zip.h>
 
+#ifndef ZIP_CODEC_ENCODE
+// this is required for old libzip...
+#define zip_get_num_entries(x, y) zip_get_num_files(x)
+#define zip_int64_t ssize_t
+#define zip_uint64_t off_t
+#endif
+
 #define ITUNES_METADATA_PLIST_FILENAME "iTunesMetadata.plist"
 
 const char PKG_PATH[] = "PublicStaging";
@@ -463,7 +470,7 @@ static int afc_upload_file(afc_client_t afc, const char* filename, const char* d
 {
 	FILE *f = NULL;
 	uint64_t af = 0;
-	char buf[8192];
+	char buf[1048576];
 
 	f = fopen(filename, "rb");
 	if (!f) {
@@ -484,8 +491,9 @@ static int afc_upload_file(afc_client_t afc, const char* filename, const char* d
 			uint32_t written, total = 0;
 			while (total < amount) {
 				written = 0;
-				if (afc_file_write(afc, af, buf, amount, &written) != AFC_E_SUCCESS) {
-					fprintf(stderr, "AFC Write error!\n");
+				afc_error_t aerr = afc_file_write(afc, af, buf, amount, &written);
+				if (aerr != AFC_E_SUCCESS) {
+					fprintf(stderr, "AFC Write error: %d\n", aerr);
 					break;
 				}
 				total += written;
@@ -906,8 +914,7 @@ run_again:
 			zbuf = NULL;
 			len = 0;
 			plist_t info = NULL;
-			char filename[256];
-			filename[0] = '\0';
+			char* filename = NULL;
 			char* app_directory_name = NULL;
 
 			if (zip_get_app_directory(zf, &app_directory_name)) {
@@ -916,6 +923,7 @@ run_again:
 			}
 
 			/* construct full filename to Info.plist */
+			filename = (char*)malloc(strlen(app_directory_name)+10+1);
 			strcpy(filename, app_directory_name);
 			free(app_directory_name);
 			app_directory_name = NULL;
@@ -923,10 +931,12 @@ run_again:
 
 			if (zip_get_contents(zf, filename, 0, &zbuf, &len) < 0) {
 				fprintf(stderr, "WARNING: could not locate %s in archive!\n", filename);
+				free(filename);
 				zip_unchange_all(zf);
 				zip_close(zf);
 				goto leave_cleanup;
 			}
+			free(filename);
 			if (memcmp(zbuf, "bplist00", 8) == 0) {
 				plist_from_bin(zbuf, len, &info);
 			} else {
